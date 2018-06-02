@@ -6,7 +6,7 @@
 	"author": "Hanyoung Jeong <8735132@gmail.com>",
 	"license": "MIT",
 	"scripts": {
-		"dev": "cross-env NODE_ENV=development nodemon server/index.js",
+		"dev": "cross-env NODE_ENV=development nodemon server/index.js --watch /server",
 		"build": "webpack --config webpack.config.prod.js -p"
 	},
 	"dependencies": {
@@ -21,6 +21,7 @@
 		"babel-preset-react": "^6.24.1",
 		"babel-preset-stage-2": "^6.24.1",
 		"nodemon": "^1.17.5",
+		"react-hot-loader": "^4.2.0",
 		"webpack": "^4.10.2",
 		"webpack-cli": "^3.0.0",
 		"webpack-dev-server": "^3.1.4"

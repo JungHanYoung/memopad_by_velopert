@@ -1,12 +1,19 @@
+var webpack = require('webpack');
+
 module.exports = {
 	mode: 'development',
-	entry: './src/index.js',
+	entry: [
+		'./src/index.js',
+		require.resolve('webpack/hot/dev-server'),
+		require.resolve('webpack-dev-server/client') + '?http://0.0.0.0:4000' // dev-server의 포트를 따른다.
+	],
 	output: {
 		path: '/public',
 		filename: 'bundle.js'
 	},
 	devServer: {
-		hot: true,
+		hotOnly: true,
+		inline: true,
 		filename: 'bundle.js',
 		publicPath: '/',
 		historyApiFallback: true,
@@ -31,9 +38,15 @@ module.exports = {
 		rules: [
 			{
 				test: /\.(js|jsx)$/,
-				use: 'babel-loader',
-				exclude: /node_modules/
+				loader: 'babel-loader',
+				exclude: /node_modules/,
+				options: {
+					cacheDirectory: true,
+					presets: [ 'env', 'react', 'stage-2' ],
+					plugins: [ 'react-hot-loader/babel' ]
+				}
 			}
 		]
-	}
+	},
+	plugins: [ new webpack.HotModuleReplacementPlugin() ]
 };
