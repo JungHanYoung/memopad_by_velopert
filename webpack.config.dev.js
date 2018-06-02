@@ -45,6 +45,10 @@ module.exports = {
 					presets: [ 'env', 'react', 'stage-2' ],
 					plugins: [ 'react-hot-loader/babel' ]
 				}
+			},
+			{
+				test: /\.scss$/,
+				use: [ 'style-loader', 'css-loader', 'sass-loader' ]
 			}
 		]
 	},

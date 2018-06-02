@@ -1,0 +1,109 @@
+.contacts {
+	// height: calc(100% - 500px);
+	height: 505px;
+	overflow-y: scroll;
+	overflow-x: hidden;
+	ul {
+		li.contact {
+			position: relative;
+			padding: 10px 0 15px 0;
+			font-size: 0.9em;
+			cursor: pointer;
+		}
+	}
+	.contact {
+		position: relative;
+		padding: 10px 0 15px 0;
+		font-size: 0.9em;
+		cursor: pointer;
+		&:nth-last-child(1) {
+			margin-bottom: 37px;
+		}
+		&:hover {
+			background: #32465a;
+		}
+		&.active {
+			background: #32465a;
+			border-right: 5px solid #435f7a;
+			span.contact-status {
+				border: 2px solid #32465a !important;
+			}
+		}
+		.wrap {
+			width: 88%;
+			margin: 0 auto;
+			position: relative;
+			span {
+				position: absolute;
+				left: 0;
+				margin: -2px 0 0 -2px;
+				width: 10px;
+				height: 10px;
+				border-radius: 50%;
+				border: 2px solid #2c3e50;
+				background: #95a5a6;
+				&.online {
+					background: #2ecc71;
+				}
+				&.away {
+					background: #f1c40f;
+				}
+				&.busy {
+					background: #e74c3c;
+				}
+			}
+			img {
+				width: 40px;
+				border-radius: 50%;
+				float: left;
+				margin-right: 10px;
+				@media screen and (max-width: 735px) {
+					margin-right: 0px;
+				}
+			}
+			.meta {
+				padding: 5px 0 0 0;
+				@media screen and (max-width: 735px) {
+					display: none;
+				}
+				.name {
+					font-weight: 600;
+				}
+				.preview {
+					margin: 5px 0 0 0;
+					padding: 0 0 1px;
+					font-weight: 400;
+					white-space: nowrap;
+					overflow: hidden;
+					text-overflow: ellipsis;
+					-moz-transition: 1s all ease;
+					-o-transition: 1s all ease;
+					-webkit-transition: 1s all ease;
+					transition: 1s all ease;
+					span {
+						position: initial;
+						border-radius: initial;
+						background: none;
+						border: none;
+						padding: 0 2px 0 0;
+						margin: 0 0 0 1px;
+						opacity: .5;
+					}
+				}
+			}
+		}
+	}
+	@media screen and (max-width: 735px) {
+		height: calc(100% - 149px);
+	}
+	&::-webkit-scrollbar {
+		width: 8px;
+		background: #2c3e50;
+		@media screen and (max-width: 735px) {
+			display: none;
+		}
+	}
+	&::-webkit-scrollbar-thumb {
+		background-color: #243140;
+	}
+}

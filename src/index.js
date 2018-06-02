@@ -1,6 +1,7 @@
 import React from 'react';
 import { hot } from 'react-hot-loader';
 import ReactDOM from 'react-dom';
+import './reset.scss';
 
 import App from './containers/App';
 

@@ -3,13 +3,14 @@ import { hot } from 'react-hot-loader';
 
 // component
 import Sidebar from './sidebar/Main';
+import ChatContent from './ChatContent';
 
 class App extends Component {
 	render() {
 		return (
 			<section className="frame">
-				<h1>Hello Chat</h1>
 				<Sidebar />
+				<ChatContent />
 			</section>
 		);
 	}
