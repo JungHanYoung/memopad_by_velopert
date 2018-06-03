@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import styled from 'styled-components';
 import './Main.scss';
 
 // component
@@ -10,14 +11,19 @@ import ContactList from './ContactList';
 class Main extends Component {
 	render() {
 		return (
-			<div className="sidepanel">
+			<Container>
 				<ContactProfile />
 				<ContactSearch />
 				<ContactList />
 				<ContactBottom />
-			</div>
+			</Container>
 		);
 	}
 }
+
+const Container = styled.div`
+	background-color: #362233;
+	grid-column: 1;
+`;
 
 export default Main;

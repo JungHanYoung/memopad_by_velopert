@@ -1,0 +1,67 @@
+$break-small: 960px;
+$break-large: 1200px;
+
+body {
+	margin: 0;
+	font-family: Arial;
+	background-color: #f2f2f2;
+}
+
+.box {
+	color: #fff;
+	padding: 1em;
+	text-align: center;
+}
+
+input {
+	width: 100%;
+	padding: 1em;
+	outline: none;
+	border: 1px solid #f2f2f2;
+}
+
+/* Our Grid Code */
+
+.app-layout {
+	display: grid;
+	height: 100vh;
+	grid-template-columns: 320px auto;
+	grid-template-rows: auto 1fr auto;
+	@media screen and (max-width: $break-small) {
+		grid-template-columns: 150px 1fr;
+	}
+
+	.header {
+		grid-column: 2;
+		grid-row: 1;
+		color: #333;
+		border-bottom: 1px solid #f2f2f2;
+		background-color: #ffffff;
+	}
+	.teams {
+		background-color: #362233;
+		grid-column: 1;
+		grid-row: 1 / 4;
+	}
+	.messages {
+		background-color: #ffffff;
+		grid-column: 2;
+		grid-row: 2;
+		padding: 0 1em;
+		overflow-y: scroll;
+		.message-list {
+			margin: 0;
+			padding: 0;
+			li {
+				padding: .2em;
+				margin-top: 1em;
+				margin-bottom: 1em;
+				background-color: #f2f2f2;
+			}
+		}
+	}
+	.input {
+		grid-column: 2;
+		grid-row: 3;
+	}
+}
