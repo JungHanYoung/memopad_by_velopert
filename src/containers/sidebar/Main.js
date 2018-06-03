@@ -22,6 +22,7 @@ class Main extends Component {
 }
 
 const Container = styled.div`
+	position: relative;
 	background-color: #362233;
 	grid-column: 1;
 `;
