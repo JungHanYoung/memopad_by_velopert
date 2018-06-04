@@ -6,15 +6,19 @@
 	"author": "Hanyoung Jeong <8735132@gmail.com>",
 	"license": "MIT",
 	"scripts": {
-		"dev": "cross-env NODE_ENV=development nodemon server/index.js --watch /server",
+		"dev": "cross-env NODE_ENV=development nodemon --exec babel-node server/index.js --watch /server",
 		"build": "webpack --config webpack.config.prod.js -p"
 	},
 	"dependencies": {
+		"bcryptjs": "^2.4.3",
 		"express": "^4.16.3",
+		"mysql2": "^1.5.3",
 		"node-sass": "^4.9.0",
 		"react": "^16.4.0",
 		"react-dom": "^16.4.0",
 		"react-router-dom": "^4.2.2",
+		"sequelize": "^4.37.10",
+		"socket.io": "^2.1.1",
 		"styled-components": "^3.3.0"
 	},
 	"devDependencies": {
@@ -23,6 +27,8 @@
 		"babel-preset-env": "^1.7.0",
 		"babel-preset-react": "^6.24.1",
 		"babel-preset-stage-2": "^6.24.1",
+		"browser-sync": "^2.24.4",
+		"browser-sync-webpack-plugin": "^2.2.2",
 		"css-loader": "^0.28.11",
 		"nodemon": "^1.17.5",
 		"react-hot-loader": "^4.2.0",

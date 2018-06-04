@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './ContactList.scss';
+import styled from 'styled-components';
 
 // component
 import ContactItem from '../../components/sidebar/ContactItem';
@@ -70,11 +70,21 @@ class ContactList extends Component {
 	render() {
 		const { contactList } = this.state;
 		return (
-			<div className="contacts">
-				<ul>{contactList.map((contactItem, index) => <ContactItem key={index} {...contactItem} />)}</ul>
-			</div>
+			<ContactListView>
+				{contactList.map((contactItem, index) => <ContactItem key={index} {...contactItem} />)}
+			</ContactListView>
 		);
 	}
 }
+
+const ContactListView = styled.ul`
+	height: 505px;
+	overflow-y: scroll;
+	overflow-x: hidden;
+	position: relative;
+	padding: 10px 0 15px;
+	font-size: 0.9em;
+	cursor: pointer;
+`;
 
 export default ContactList;

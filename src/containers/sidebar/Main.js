@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import './Main.scss';
 
 // component
 import ContactProfile from '../../components/sidebar/ContactProfile';
@@ -23,8 +22,9 @@ class Main extends Component {
 
 const Container = styled.div`
 	position: relative;
-	background-color: #362233;
+	background-color: #293d52;
 	grid-column: 1;
+	color: #f5f5f5;
 `;
 
 export default Main;

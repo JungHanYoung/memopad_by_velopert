@@ -8,7 +8,7 @@ export default () => {
 			<img src="http://emilcarlsson.se/assets/mikeross.png" className="online" alt="" />
 			<ProfileName>Mike Ross</ProfileName>
 			<i className="fa fa-chevron-down expand-button" aria-hidden="true" />
-			<StatusOptionList active>
+			<StatusOptionList>
 				<StatusOption online>
 					<span className="status-circle" /> <p>Online</p>
 				</StatusOption>
@@ -22,23 +22,7 @@ export default () => {
 					<span className="status-circle" /> <p>Offline</p>
 				</StatusOption>
 			</StatusOptionList>
-			<div className="status-options">
-				<ul>
-					<li className="status-online active">
-						<span className="status-circle" /> <p>Online</p>
-					</li>
-					<li className="status-away">
-						<span className="status-circle" /> <p>Away</p>
-					</li>
-					<li className="status-busy">
-						<span className="status-circle" /> <p>Busy</p>
-					</li>
-					<li className="status-offline">
-						<span className="status-circle" /> <p>Offline</p>
-					</li>
-				</ul>
-			</div>
-			<div className="expanded">
+			<ExpandedProfile>
 				<label htmlFor="twitter">
 					<i className="fa fa-facebook fa-fw" aria-hidden="true" />
 				</label>
@@ -51,7 +35,7 @@ export default () => {
 					<i className="fa fa-instagram fa-fw" aria-hidden="true" />
 				</label>
 				<input name="twitter" type="text" value="mike.ross" readOnly />
-			</div>
+			</ExpandedProfile>
 		</ProfileContainer>
 	);
 };
@@ -84,6 +68,13 @@ const ProfileContainer = styled.div`
 				: props.away
 					? 'border: 2px solid #f1c40f;'
 					: props.busy ? 'border: 2px solid #e74c3c;' : props.offline ? 'border: 2px solid #95a5a6;' : null};
+	}
+	.expand-button {
+		float: right;
+		margin-top: 23px;
+		font-size: 0.8em;
+		cursor: pointer;
+		color: #435f7a;
 	}
 `;
 
@@ -192,5 +183,26 @@ const StatusOption = styled.li`
 	p {
 		padding-left: 18px;
 		padding-top: 3px;
+	}
+`;
+
+const ExpandedProfile = styled.div`
+	padding: 100px 0 0;
+	display: block;
+	ling-height: initial;
+	label {
+		float: left;
+		clear: both;
+		margin: 0 8px 5px 0;
+		padding: 5px 0;
+	}
+	input {
+		border: none;
+		margin-bottom: 6px;
+		background: #32465a;
+		border-radius: 3px;
+		color: #f5f5f5;
+		padding: 7px;
+		width: calc(100% - 43px);
 	}
 `;
